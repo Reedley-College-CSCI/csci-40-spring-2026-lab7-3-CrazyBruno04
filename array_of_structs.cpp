@@ -63,7 +63,13 @@ file.close();
 
 // TODO: Step 7 - Implement printTemperatures()
 // Print all stored temperatures in a formatted table
-
+void printTemperatures(const TemperatureRecord temps[], int size) {
+	cout << "Day\tTemp" << endl;
+	
+	for (int i = 0; i < size; i++) {
+		cout << temps[i].day << "\t" << temps[i].temperature << endl;
+	}
+}
 // TODO: Step 8 - Implement findMin()
 // Return the TemperatureRecord with the lowest temperature
 
