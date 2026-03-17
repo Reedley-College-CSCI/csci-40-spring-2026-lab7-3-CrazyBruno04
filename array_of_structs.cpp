@@ -100,4 +100,5 @@ double findAverage(const TemperatureRecord temps[], int size) {
 	}
 	return double sum / size;
 }
+
 // Compute and return the average temperature
