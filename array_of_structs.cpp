@@ -44,6 +44,22 @@ int main() {
 
 // TODO: Step 6 - Implement readTemperatures()
 // Read from "temps.txt" and store data in the array
+void readTemperatures(TemperatureRecord temps[], int& size) {
+	ifstream infile("temps.txt");
+
+	if (!infile) {
+		cout << "Error opening file!" << endl;
+		return;
+	}
+
+	size = 0;
+
+	while (file >> temps[size].day >> temps[size].temperature) && size < MAX_DAYS) {
+		size++;
+}
+
+file.close();
+}
 
 // TODO: Step 7 - Implement printTemperatures()
 // Print all stored temperatures in a formatted table
