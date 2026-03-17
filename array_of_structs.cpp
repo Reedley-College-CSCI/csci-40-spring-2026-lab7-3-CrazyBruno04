@@ -1,4 +1,4 @@
-//Bruno Ochoa, I
+//Bruno Ochoa
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -44,8 +44,9 @@ int main() {
 
 // TODO: Step 6 - Implement readTemperatures()
 // Read from "temps.txt" and store data in the array
-void readTemperatures(TemperatureRecord temps[], int& size) {
-	ifstream infile("temps.txt");
+void readTemperatures(TemperatureRecord temps[], int & size) {
+	ifstream infile;
+	infile.open("temps.txt");
 
 	if (!infile) {
 		cout << "Error opening file!" << endl;
@@ -54,11 +55,11 @@ void readTemperatures(TemperatureRecord temps[], int& size) {
 
 	size = 0;
 
-	while (file >> temps[size].day >> temps[size].temperature) && size < MAX_DAYS) {
+	while (infile >> temps[size].day >> temps[size].temperature && size < MAX_DAYS) {
 		size++;
 }
 
-file.close();
+infile.close();
 }
 
 // TODO: Step 7 - Implement printTemperatures()
@@ -98,7 +99,7 @@ double findAverage(const TemperatureRecord temps[], int size) {
 	for (int i = 0; i < size; i++) {
 		sum += temps[i].temperature;
 	}
-	return double sum / size;
+	return static_cast <double> (sum) / size;
 }
 
 // Compute and return the average temperature
