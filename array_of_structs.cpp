@@ -72,9 +72,32 @@ void printTemperatures(const TemperatureRecord temps[], int size) {
 }
 // TODO: Step 8 - Implement findMin()
 // Return the TemperatureRecord with the lowest temperature
-
+TemperatureRecord findMin(const TemperatureRecord temps[], int size) {
+	TemperatureRecord min = temps[0];
+	for (int i = 1; i < size; i++) {
+		if (temps[i].temperature < min.temperature) {
+			min = temps[i];
+		}
+	}
+	return min;
+}
 // TODO: Step 9 - Implement findMax()
 // Return the TemperatureRecord with the highest temperature
-
+TemperatureRecord findMax(const TemperatureRecord temps[], int size) {
+	TemperatureRecord max = temps[0];
+	for (int i = 1; i < size; i++) {
+		if (temps[i].temperature > max.temperature) {
+			max = temps[i];
+		}
+	}
+	return max;
+}
 // TODO: Step 10 - Implement findAverage()
+double findAverage(const TemperatureRecord temps[], int size) {
+	int sum = 0;
+	for (int i = 0; i < size; i++) {
+		sum += temps[i].temperature;
+	}
+	return double sum / size;
+}
 // Compute and return the average temperature
